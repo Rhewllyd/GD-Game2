@@ -19,6 +19,7 @@ skeleton = NodePath("../..")
 material/0 = null
 
 [node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00208282, -0.0515442, 0.0882034 )
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 4, 6, 4 )
 data = {

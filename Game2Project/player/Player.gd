@@ -5,6 +5,9 @@ export var move_speed = 15.0
 export var DEADZONE = 0.2
 export var rotate_speed = 0.2
 
+export(Resource) var bullet_resource
+onready var bullet_scn : PackedScene = load(bullet_resource.resource_path)
+
 func _process(_delta):
 	process_movement()
 	process_turning()
@@ -40,6 +43,9 @@ func process_turning():
 	
 func process_fire():
 	if Input.is_action_just_pressed("fire"):
-		print("fired")
+		var b = bullet_scn.instance()
+		b.transform = $MeshInstance/bulletSpawn.global_transform
+		get_tree().root.add_child(b)
+		b.fire()
 	
 	
