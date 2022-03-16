@@ -1,9 +1,17 @@
 extends KinematicBody
 class_name player
 
+signal health_updated(health)
+signal player_killed()
+
 export var move_speed = 15.0
 export var DEADZONE = 0.2
 export var rotate_speed = 0.2
+
+export (float) var max_health = 6
+
+onready var health = max_health setget _set_health
+onready var invuln_timer = $InvulnTimer
 
 export(Resource) var bullet_resource
 onready var bullet_scn : PackedScene = load(bullet_resource.resource_path)
@@ -21,7 +29,8 @@ func process_movement():
 		motion = Vector3.ZERO
 	elif motion.length_squared() > 1.0:
 		motion = motion.normalized()
-	move_and_slide(motion * move_speed)
+# warning-ignore:return_value_discarded
+	move_and_slide(motion * move_speed, Vector3.UP, false, 4, 0.785, true)
 	
 var look := Vector3.FORWARD
 func process_turning():
@@ -47,5 +56,21 @@ func process_fire():
 		b.transform = $MeshInstance/bulletSpawn.global_transform
 		get_tree().root.add_child(b)
 		b.fire()
-	
-	
+
+func damage(amount):
+	if invuln_timer.is_stopped():
+		invuln_timer.start()
+		_set_health(health - amount)
+
+func kill_player():
+	pass
+
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			kill_player()
+			emit_signal("player_killed")
+
