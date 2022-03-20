@@ -22,6 +22,7 @@ func _process(_delta):
 	process_turning()
 	process_fire()
 	
+	
 func process_movement():	
 	var z_movement := Input.get_action_strength("moveRight") - Input.get_action_strength("moveLeft")
 	var x_movement := Input.get_action_strength("moveDown") - Input.get_action_strength("moveUp")
