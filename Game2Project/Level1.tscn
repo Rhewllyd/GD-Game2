@@ -768,23 +768,23 @@ transform = Transform( 1, 0, 0, 0, 0.868632, 0.495459, 0, -0.495459, 0.868632, 4
 transform = Transform( 0.0535385, 0.701568, 0.710589, 0, 0.711609, -0.702575, -0.998566, 0.0376149, 0.0380985, 49.557, 2.12996, 2.4519 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Campfire"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.35, 0, -114.415 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 99.0697, 0, -114.415 )
 shape = SubResource( 42 )
 
 [node name="log11" parent="Campfire" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.368, 0.347809, -113.842 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.088, 0.347809, -113.842 )
 
 [node name="log12" parent="Campfire" instance=ExtResource( 3 )]
-transform = Transform( -0.102121, -0.392444, -0.914089, 0.0343225, 0.916956, -0.397509, 0.99418, -0.071968, -0.0801711, 100.443, 0.40132, -114.285 )
+transform = Transform( -0.102121, -0.392444, -0.914089, 0.0343225, 0.916956, -0.397509, 0.99418, -0.071968, -0.0801711, 98.1627, 0.40132, -114.285 )
 
 [node name="log13" parent="Campfire" instance=ExtResource( 3 )]
-transform = Transform( 0.717337, -0.475159, -0.50956, 0.199355, 0.840765, -0.50336, 0.667596, 0.259496, 0.697838, 100.482, 0.984976, -112.989 )
+transform = Transform( 0.717337, -0.475159, -0.50956, 0.199355, 0.840765, -0.50336, 0.667596, 0.259496, 0.697838, 98.2017, 0.984976, -112.989 )
 
 [node name="log14" parent="Campfire" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 0.868632, 0.495459, 0, -0.495459, 0.868632, 99.4869, 1.60532, -115.295 )
+transform = Transform( 1, 0, 0, 0, 0.868632, 0.495459, 0, -0.495459, 0.868632, 97.2066, 1.60532, -115.295 )
 
 [node name="log15" parent="Campfire" instance=ExtResource( 3 )]
-transform = Transform( 0.0535385, 0.701568, 0.710589, 0, 0.711609, -0.702575, -0.998566, 0.0376149, 0.0380985, 102.001, 2.12996, -112.504 )
+transform = Transform( 0.0535385, 0.701568, 0.710589, 0, 0.711609, -0.702575, -0.998566, 0.0376149, 0.0380985, 99.7207, 2.12996, -112.504 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Campfire"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.357, -0.00917053, 119.242 )
