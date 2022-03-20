@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://player/bullet.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PrismMesh" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( -1, -1, -1, 0.0293034, 0.941393, 0.941393, 0.147043, 0.705915, 0.94122, -1, -1, 1, 1, -1, -1, -0.0293034, 0.941393, -0.941393, 1, -1, 1, -0.0293034, 0.941393, 0.941393, 0.0293034, 0.941393, -0.941393 )
+
+[node name="Player" type="KinematicBody" groups=["player"]]
+collision_mask = 4
+script = ExtResource( 1 )
+bullet_resource = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="." groups=["player"]]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="bulletSpawn" type="Spatial" parent="MeshInstance" groups=["player"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.882633, 3.85811e-08 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="." groups=["player"]]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="InvulnTimer" type="Timer" parent="." groups=["player"]]
+wait_time = 0.75
+one_shot = true
