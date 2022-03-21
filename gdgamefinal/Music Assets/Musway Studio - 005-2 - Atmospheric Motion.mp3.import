@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Musway Studio - 005-2 - Atmospheric Motion.mp3-64c2361633f3c5ed67f1dd843f9d6f7a.mp3str"
+
+[deps]
+
+source_file="res://Music Assets/Musway Studio - 005-2 - Atmospheric Motion.mp3"
+dest_files=[ "res://.import/Musway Studio - 005-2 - Atmospheric Motion.mp3-64c2361633f3c5ed67f1dd843f9d6f7a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
