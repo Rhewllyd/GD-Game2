@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-neutral-bot-pinbal-tone-3137.wav-de760f787907609c31be273ff22aaf5a.sample"
+
+[deps]
+
+source_file="res://Music Assets/mixkit-neutral-bot-pinbal-tone-3137.wav"
+dest_files=[ "res://.import/mixkit-neutral-bot-pinbal-tone-3137.wav-de760f787907609c31be273ff22aaf5a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

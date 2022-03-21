@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/customfontsmallhealth.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/GUI.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.196078, 0.501961, 0.0431373, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 994.0
+margin_bottom = 570.0
+mouse_filter = 2
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_right = 964.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( -586, 31 )
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Rows/TopRow"]
+margin_right = 250.0
+margin_bottom = 88.0
+mouse_filter = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/Rows/TopRow/CenterContainer"]
+margin_top = 24.0
+margin_right = 250.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 250, 40 )
+mouse_filter = 2
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 6.0
+value = 6.0
+percent_visible = false
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/Rows/TopRow/CenterContainer"]
+margin_left = 92.0
+margin_top = 33.0
+margin_right = 158.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 1 )
+text = "Health"
+
+[node name="MiddleRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 92.0
+margin_right = 964.0
+margin_bottom = 447.0
+rect_pivot_offset = Vector2( -586, 31 )
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 451.0
+margin_right = 964.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( -586, 31 )
+size_flags_vertical = 3
