@@ -3,6 +3,8 @@ class_name player
 
 signal health_updated(health)
 signal player_killed()
+signal gamewin()
+signal gamelose()
 
 export var move_speed = 15.0
 export var DEADZONE = 0.2
@@ -40,7 +42,9 @@ func process_movement():
 				if collision.collider.is_in_group("enemy"):
 					damage_player(1)
 				if collision.collider.is_in_group("portal"):
-					get_tree().change_scene("res://Level2.tscn")
+					emit_signal("gamewin")
+					#get_tree().change_scene("res://UI/GameOverScreen.tscn")
+					
 var look := Vector3.FORWARD
 func process_turning():
 	var z_look: float = Input.get_action_strength("lookRight") - Input.get_action_strength("lookLeft")
@@ -74,6 +78,7 @@ func damage_player(amount):
 
 func kill_player():
 	print("PLAYER KILLED")
+	emit_signal("gamelose")
 	get_tree().change_scene("res://UI/GameOverScreen.tscn")
 
 func _set_health(value):

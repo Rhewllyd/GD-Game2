@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var title = $PanelContainer/MarginContainer/Rows/Title
 
+
 func set_title(win: bool):
 	if win:
 		title.text = "YOU WIN"
@@ -9,6 +10,7 @@ func set_title(win: bool):
 	else:
 		title.test = "YOU LOSE"
 		title.modulate = Color.red
+
 
 func _on_RestartButton_pressed() -> void:
 	get_tree().paused = false

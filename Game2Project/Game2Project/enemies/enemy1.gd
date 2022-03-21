@@ -10,6 +10,7 @@ onready var player = $"../../Player"
 export (float) var max_health = 3
 onready var health = max_health setget _set_health
 onready var invuln_timer = $InvulnTimer
+onready var on_screen = false
 
 func _ready():
 	pass
@@ -38,7 +39,8 @@ func move_to(target_pos):
 	path_node = 0
 
 func _on_Timer_timeout():
-	move_to(player.global_transform.origin)
+	if on_screen == true:
+		move_to(player.global_transform.origin)
 
 func damage_enemy(amount):
 	if invuln_timer.is_stopped():
@@ -58,3 +60,11 @@ func _set_health(value):
 		if health == 0:
 			kill_enemy()
 			emit_signal("enemy_killed")
+
+
+func _on_VisibilityNotifier_screen_entered():
+	on_screen = true
+
+
+func _on_VisibilityNotifier_screen_exited():
+	on_screen = false

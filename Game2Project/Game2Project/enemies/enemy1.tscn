@@ -33,4 +33,9 @@ shape = SubResource( 3 )
 wait_time = 0.5
 one_shot = true
 
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="screen_entered" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
