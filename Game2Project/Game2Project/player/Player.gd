@@ -38,9 +38,9 @@ func process_movement():
 	for index in get_slide_count():
 				var collision = get_slide_collision(index)
 				if collision.collider.is_in_group("enemy"):
-					#print("player collided with enemy(player)", collision.collider.name)
 					damage_player(1)
-					
+				if collision.collider.is_in_group("portal"):
+					get_tree().change_scene("res://Level2.tscn")
 var look := Vector3.FORWARD
 func process_turning():
 	var z_look: float = Input.get_action_strength("lookRight") - Input.get_action_strength("lookLeft")
